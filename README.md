@@ -7,7 +7,7 @@ ___
 2. Update the path of chrome driver on scrape.py and input the path where chromedriver is installed.
 
         browser = webdriver.Chrome(executable_path='chromedriverpath',options=option)
-3. Run __init__.py in terminal:
+3. Clone the file and run __init__.py in terminal:
 
         python __init__.py
 4. Check intially by turning off the headless chrome.
