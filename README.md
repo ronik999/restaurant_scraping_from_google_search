@@ -10,7 +10,11 @@ ___
 3. Run __init__.py in terminal:
 
         python __init__.py
-__
+4. Check intiall by turning off the headless chrome.
 
+        #option.add_argument('headless')
+5. Enable the headless chrome mode and the elements are scraped and placed in scraping.csv and review.csv
+
+_________________
 
 
