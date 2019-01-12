@@ -3,11 +3,13 @@
 Restaurants in Nepal is scraped which is provided by google using Selenium web automation. The data are then stored in csv file named as scraping.csv for storing all restaurants information and review.csv for restaurants review posted by the users in www.google.com.
 ___
 # Execution
-1. Install all the required dependencies from requirement.txt.
+1. Clone the repository and install all the required dependencies from requirement.txt.
+
+        pip install -r requirement.txt
 2. Update the path of chrome driver on scrape.py and input the path where chromedriver is installed.
 
         browser = webdriver.Chrome(executable_path='chromedriverpath',options=option)
-3. Clone the file and run __init__.py in terminal:
+3. Run __init__.py in terminal:
 
         python __init__.py
 4. Check initially by turning off the headless chrome.
