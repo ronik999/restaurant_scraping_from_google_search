@@ -8,7 +8,7 @@ from selenium.common.exceptions import NoSuchElementException
 ###Enabling headless browser
 
 option=webdriver.ChromeOptions()
-option.add_argument('headless')
+#option.add_argument('headless')
 browser = webdriver.Chrome(executable_path='./chromedriver',options=option)
 browser.get('https://www.google.com/search?hl=en&tbm=lcl&ei=EHIwXJmxLoz99QPamp6IAw&q=RESTAurants+in++nepal&oq=RESTAurants+in++nepal&gs_l=psy-ab.12...0.0.0.5837.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.oAAOM-yito0#rlfi=hd:;si:;mv:!1m2!1d27.734635500000003!2d85.36469360000001!2m2!1d27.6753043!2d85.30555580000001;tbs:lrf:!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9')
 
