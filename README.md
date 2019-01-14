@@ -13,7 +13,7 @@ ___
 [chrome driver]: http://chromedriver.chromium.org/downloads
 
         browser = webdriver.Chrome(executable_path='chromedriverpath',options=option)
-4. Open package and run __init__.py in terminal:
+4. Open package and run '__ init__.py' in terminal:
 
         python __init__.py
 5. Check initially by turning off the headless chrome.
