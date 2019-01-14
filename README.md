@@ -13,13 +13,13 @@ ___
 [chrome driver]: http://chromedriver.chromium.org/downloads
 
         browser = webdriver.Chrome(executable_path='chromedriverpath',options=option)
-4. Open package and run '__ init__.py' in terminal:
+4. Open folder named package and run '__ init__.py' in terminal:
 
         python __init__.py
-5. Check initially by turning off the headless chrome.
+5. To turn on the headless mode, edit 'scape.py' file by removing the hash-comment '#' on the eleventh line 
 
-        #option.add_argument('headless')
-6. Enable the headless chrome mode and run again.Now the elements are scraped and placed in scraping.csv and review.csv.
+        option.add_argument('headless')
+6. Now the headless mode is enabled. Run the program again and the elements are scraped and placed in scraping.csv and review.csv.
 
 _________________
 
