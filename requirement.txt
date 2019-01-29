@@ -1,2 +1,3 @@
 selenium==2.45.0
+chromedriver-installer==0.0.6
 
