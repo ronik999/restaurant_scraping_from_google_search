@@ -9,8 +9,8 @@ from selenium.common.exceptions import NoSuchElementException
 
 option=webdriver.ChromeOptions()
 #option.add_argument('headless')
-browser = webdriver.Chrome(executable_path='./chromedriver',options=option)
-browser.get('https://www.google.com/search?hl=en&tbm=lcl&ei=GHw8XMe1CcmAvQS8iojABg&q=RESTAurants+in++nepal&oq=RESTAurants+in++nepal&gs_l=psy-ab.12...0.0.0.34092.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.LNIQOkTQYzI#rlfi=hd:;si:;mv:!1m2!1d27.0242634!2d84.89920339999999!2m2!1d26.9820039!2d84.835977;tbs:lrf:!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9')
+browser = webdriver.Chrome(executable_path='bin/chromedriver',options=option)
+browser.get('https://www.google.com/search?hl=en&tbm=lcl&ei=qPVPXK2gJ4z_rQGYnZawDw&q=restaurants+in+nepal&oq=restaurants+in+nepal&gs_l=psy-ab.3..0i67k1j0l3j0i22i30k1l6.3477.6556.0.6783.24.14.2.8.9.0.221.1148.0j5j2.7.0....0...1c.1.64.psy-ab..8.16.1011...0i10k1.0.fcc4ueb1-SQ#rlfi=hd:;si:;mv:!1m2!1d27.7242011!2d85.3444323!2m2!1d27.7036207!2d85.3067027;tbs:lrf:!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9')
 
 def scrape_elements():
 
