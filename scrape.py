@@ -1,5 +1,6 @@
 from selenium import webdriver
 from time import sleep
+import os
 import csv
 from selenium.common.exceptions import NoSuchElementException
 
@@ -9,7 +10,9 @@ from selenium.common.exceptions import NoSuchElementException
 
 option=webdriver.ChromeOptions()
 #option.add_argument('headless')
-browser = webdriver.Chrome(executable_path='/bin/chromedriver',options=option)
+browser = webdriver.Chrome(executable_path='chromedriver',options=option)
+os.system('chmod +x ./chromedriver')
+chromedriver = './chromedriver'
 browser.get('https://www.google.com/search?hl=en&tbm=lcl&ei=qkFRXOXnNdf69QOJ07CoAg&q=restaurants+in+nepal&oq=restaurants+in+nepal&gs_l=psy-ab.12...0.0.0.4479.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.uDrCYZozVUA#rlfi=hd:;si:;mv:!1m2!1d27.724099199999998!2d85.3324016!2m2!1d27.7054214!2d85.3073836;tbs:lrf:!2m1!1e2!2m1!1e3!2m4!1e17!4m2!17m1!1e2!3sIAE,lf:1,lf_ui:9')
 
 
