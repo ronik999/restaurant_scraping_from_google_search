@@ -12,9 +12,9 @@ ___
 3. Run 'scrape.py' in terminal:
 
         python scrape.py
-4. To turn on the headless mode, edit 'scrape.py' file by removing the hash-comment '#' on the eleventh line  
+4. To turn on the headless mode, Run 'scrape.py' file by using following command in terminal:  
 
-        option.add_argument('headless')
+        python scrape.py --headless
 5. Now the headless mode is enabled. Run the program again and the elements are scraped and placed in scraping.csv and review.csv.
 
 _________________
