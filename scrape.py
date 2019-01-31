@@ -10,6 +10,9 @@ ts=time.time()
 
 from selenium.common.exceptions import NoSuchElementException
 
+path= r'./Record'
+if not os.path.exists(path):
+    os.makedirs(path)
 #Importing files
 
 ###Enabling headless browser
