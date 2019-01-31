@@ -9,7 +9,6 @@ ___
 
 2. Download and install python (version 3.7.1) and also download and install the latest version of chrome browser.
 
-[GitHub Issue tracker](http://github.com/dbpedia/dbpedia-links/issues)
 
 3. Run 'scrape.py' in terminal:
 
