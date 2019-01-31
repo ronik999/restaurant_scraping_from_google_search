@@ -7,7 +7,7 @@ ___
 
         pip install -r requirements.txt
 
-2. Download and install python (version 3.7.1) and also download and install the latest version of chrome browser.
+2. Download and install [Python Version 3.7.1](https://www.python.org/downloads/release/python-371/) and also download [Google Chrome](https://www.google.com/chrome/)
 
 3. Run 'scrape.py' in terminal:
 
@@ -15,7 +15,7 @@ ___
 4. To turn on the headless mode, Run 'scrape.py' file by using following command in terminal:  
 
         python scrape.py --headless
-5. Now the headless mode is enabled. Run the program again and the elements are scraped and placed in scraping.csv and review.csv.
+5. Now the headless mode is enabled and the elements are scraped and placed in Record folder.
 
 _________________
 
