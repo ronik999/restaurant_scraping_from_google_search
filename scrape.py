@@ -2,6 +2,7 @@ from selenium import webdriver
 from time import sleep
 import os
 import csv
+import argparse
 from selenium.common.exceptions import NoSuchElementException
 
 #Importing files
@@ -9,7 +10,13 @@ from selenium.common.exceptions import NoSuchElementException
 ###Enabling headless browser
 
 option=webdriver.ChromeOptions()
-#option.add_argument('headless')
+parser = argparse.ArgumentParser()
+parser.add_argument('--headless', help='for headless argument',action="store_true")
+args = parser.parse_args()
+if args.headless:
+    print("headless turned on")
+    option.add_argument('headless')
+
 browser = webdriver.Chrome(executable_path='chromedriver',options=option)
 os.system('chmod +x ./chromedriver')
 chromedriver = './chromedriver'
@@ -25,7 +32,7 @@ csv_writer.writerow(['Restaurant Name','Restaurant Rating','Restaurant Address',
 csv_file1=open('review.csv','w')
 csv_writer1=csv.writer(csv_file1)
 
-
+print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
 for j in range(13):
     for i in range(19):
         try:
