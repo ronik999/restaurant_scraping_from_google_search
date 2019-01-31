@@ -3,6 +3,11 @@ from time import sleep
 import os
 import csv
 import argparse
+import time
+
+ts=time.time()
+
+
 from selenium.common.exceptions import NoSuchElementException
 
 #Importing files
@@ -24,12 +29,12 @@ browser.get('https://www.google.com/search?hl=en&tbm=lcl&ei=qkFRXOXnNdf69QOJ07Co
 
 
 
-csv_file=open('scraping.csv','w')
+csv_file=open('Record/'+str(ts)+'Scrape.csv','w')
 csv_writer=csv.writer(csv_file)
 csv_writer.writerow(['Restaurant Name','Restaurant Rating','Restaurant Address','Contact No.','Cuisine','Opening Hours','Google Reviews'])
 
 
-csv_file1=open('review.csv','w')
+csv_file1=open('Record/'+str(ts)+'Review.csv','w')
 csv_writer1=csv.writer(csv_file1)
 
 print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
