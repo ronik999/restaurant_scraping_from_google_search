@@ -3,7 +3,7 @@
 Restaurants in Nepal is scraped which is provided by google using Selenium web automation. The data are then stored in csv file named as scraping.csv for storing all restaurants information and review.csv for restaurants review posted by the users in www.google.com.
 ___
 # Execution
-1.Download and install [Python Version 3.7.1](https://www.python.org/downloads/release/python-371/) and also download [Google Chrome](https://www.google.com/chrome/)
+1. Download and install [Python Version 3.7.1](https://www.python.org/downloads/release/python-371/) and also download [Google Chrome](https://www.google.com/chrome/)
 
 2. Clone the repository and open the terminal in cloned directory then install all the required dependencies from requirements.txt.
 
