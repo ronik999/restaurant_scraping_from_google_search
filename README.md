@@ -15,7 +15,7 @@ ___
 4. To turn on the headless mode, Run 'scrape.py' file by using following command in terminal:  
 
         python scrape.py --headless
-5. Now the headless mode is enabled. Run the program again and the elements are scraped and placed in scraping.csv and review.csv.
+5. Now the headless mode is enabled and the elements are scraped and placed in Record folder.
 
 _________________
 
