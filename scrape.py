@@ -1,9 +1,10 @@
 from selenium import webdriver
+import time
 from time import sleep
 import os
 import csv
 import argparse
-import time
+
 
 ts=time.time()
 
