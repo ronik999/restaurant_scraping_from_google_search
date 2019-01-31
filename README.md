@@ -7,8 +7,7 @@ ___
 
         pip install -r requirements.txt
 
-2. Download and install [Python Version 3.7.1](https://www.python.org/downloads/release/python-371/) and also download and install the latest version of chrome browser.
-
+2. Download and install [Python Version 3.7.1](https://www.python.org/downloads/release/python-371/) and also download [Google Chrome](https://www.google.com/chrome/)
 
 3. Run 'scrape.py' in terminal:
 
