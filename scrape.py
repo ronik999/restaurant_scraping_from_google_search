@@ -22,9 +22,10 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--headless', help='for headless argument',action="store_true")
 args = parser.parse_args()
 if args.headless:
-    print("headless turned on")
+    print("HEADLESS MODE ENABLED.")
     option.add_argument('headless')
-
+else:
+    print("HEADLESS mode DISABLED. To enable Headless mode run 'python scrape.py --headless'")
 browser = webdriver.Chrome(executable_path='chromedriver',options=option)
 os.system('chmod +x ./chromedriver')
 chromedriver = './chromedriver'
