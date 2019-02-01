@@ -13,7 +13,7 @@ if not os.path.exists(path):
 
 def headless_mode_argument():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--headless', help='for headless argument',action="store_true")
+    parser.add_argument('--headless', help='for h   eadless argument',action="store_true")
     args = parser.parse_args()
     if args.headless:
         print("HEADLESS MODE ENABLED.")
