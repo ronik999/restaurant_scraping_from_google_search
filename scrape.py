@@ -13,7 +13,7 @@ if not os.path.exists(path):
 
 def headless_mode_argument():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--headless', help='for h   eadless argument',action="store_true")
+    parser.add_argument('--headless', help='for headless argument',action="store_true")
     args = parser.parse_args()
     if args.headless:
         print("HEADLESS MODE ENABLED.")
@@ -26,13 +26,13 @@ def clicking_buttons_to_load_required_data():
     try:
         browser.find_elements_by_class_name("VkpGBb")[i].click();
     except:
-        pass
+        continue
 
     sleep(5)
     try:
         browser.find_element_by_class_name("BTP3Ac").click();
     except:
-        pass
+        continue
 
 def scrape_restaurants_name():
     try:
@@ -145,7 +145,7 @@ if __name__ == "__main__":
             google_review=scrape_restaurants_google_review()
             scrape_csv_writer.writerow([name,rating,address,contact,cuisine,time,google_review])
             scrape_comments_review(name)
-        if j==13:
+        if j==:
             break
         #print('loop break as page ends here')
 
