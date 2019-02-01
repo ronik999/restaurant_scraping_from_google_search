@@ -26,13 +26,13 @@ def clicking_buttons_to_load_required_data():
     try:
         browser.find_elements_by_class_name("VkpGBb")[i].click();
     except:
-        continue
+        pass
 
     sleep(5)
     try:
         browser.find_element_by_class_name("BTP3Ac").click();
     except:
-        continue
+        pass
 
 def scrape_restaurants_name():
     try:
@@ -145,7 +145,7 @@ if __name__ == "__main__":
             google_review=scrape_restaurants_google_review()
             scrape_csv_writer.writerow([name,rating,address,contact,cuisine,time,google_review])
             scrape_comments_review(name)
-        if j==13:
+        if j==None:
             break
         #print('loop break as page ends here')
 
