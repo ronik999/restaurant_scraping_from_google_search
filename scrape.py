@@ -6,36 +6,20 @@ import argparse
 import time
 from selenium.common.exceptions import NoSuchElementException
 
+#creating folder if it doesn't exist
 path= r'./Record'
 if not os.path.exists(path):
     os.makedirs(path)
-#Importing files
 
-###Enabling headless browser and passing argument
-option=webdriver.ChromeOptions()
-parser = argparse.ArgumentParser()
-parser.add_argument('--headless', help='for headless argument',action="store_true")
-args = parser.parse_args()
-if args.headless:
-    print("HEADLESS MODE ENABLED.")
-    option.add_argument('headless')
-else:
-    print("HEADLESS mode DISABLED. To enable Headless mode run 'python scrape.py --headless'")
-browser = webdriver.Chrome(executable_path='chromedriver',options=option)
-os.system('chmod +x ./chromedriver')
-chromedriver = './chromedriver'
-browser.get('https://www.google.com/search?hl=en&tbm=lcl&ei=qkFRXOXnNdf69QOJ07CoAg&q=restaurants+in+nepal&oq=restaurants+in+nepal&gs_l=psy-ab.12...0.0.0.4479.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.uDrCYZozVUA#rlfi=hd:;si:;mv:!1m2!1d27.724099199999998!2d85.3324016!2m2!1d27.7054214!2d85.3073836;tbs:lrf:!2m1!1e2!2m1!1e3!2m4!1e17!4m2!17m1!1e2!3sIAE,lf:1,lf_ui:9')
-
-
-
-ts=time.time()
-scrape_file=open('Record/'+str(ts)+'Scrape.csv','w')
-scrape_csv_writer=csv.writer(scrape_file)
-scrape_csv_writer.writerow(['Restaurant Name','Restaurant Rating','Restaurant Address','Contact No.','Cuisine','Opening Hours','Google Reviews'])
-
-review_file=open('Record/'+str(ts)+'Review.csv','w')
-review_csv_writer=csv.writer(review_file)
-
+def headless_mode_argument():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--headless', help='for headless argument',action="store_true")
+    args = parser.parse_args()
+    if args.headless:
+        print("HEADLESS MODE ENABLED.")
+        option.add_argument('headless')
+    else:
+        print("HEADLESS mode DISABLED. To enable Headless mode run 'python scrape.py --headless'")
 
 
 def clicking_buttons_to_load_required_data():
@@ -131,10 +115,26 @@ def scrape_comments_review(name):
 #################################################      MAIN    #####################################
 
 if __name__ == "__main__":
+
+    option=webdriver.ChromeOptions()
+    headless_mode_argument() #enable headless mode
+    browser = webdriver.Chrome(executable_path='chromedriver',options=option)
+    os.system('chmod +x ./chromedriver')
+    chromedriver = './chromedriver'
+    browser.get('https://www.google.com/search?hl=en&tbm=lcl&ei=qkFRXOXnNdf69QOJ07CoAg&q=restaurants+in+nepal&oq=restaurants+in+nepal&gs_l=psy-ab.12...0.0.0.4479.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.uDrCYZozVUA#rlfi=hd:;si:;mv:!1m2!1d27.724099199999998!2d85.3324016!2m2!1d27.7054214!2d85.3073836;tbs:lrf:!2m1!1e2!2m1!1e3!2m4!1e17!4m2!17m1!1e2!3sIAE,lf:1,lf_ui:9')
+
+
+    ts=time.time()
+    scrape_file=open('Record/'+str(ts)+'Scrape.csv','w')
+    scrape_csv_writer=csv.writer(scrape_file)
+    scrape_csv_writer.writerow(['Restaurant Name','Restaurant Rating','Restaurant Address','Contact No.','Cuisine','Opening Hours','Google Reviews'])
+
+    review_file=open('Record/'+str(ts)+'Review.csv','w')
+    review_csv_writer=csv.writer(review_file)
+    print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
     for j in range(13):
         for i in range(19):
             clicking_buttons_to_load_required_data()
-            print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
             name=scrape_restaurants_name()
             print(name)
             rating=scrape_restaurants_rating()
