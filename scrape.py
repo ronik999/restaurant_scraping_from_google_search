@@ -25,7 +25,7 @@ def headless_mode_argument():
 def clicking_buttons_to_load_required_data():
     try:
         browser.find_elements_by_class_name("VkpGBb")[i].click();
-    except:
+    except IndexError:
         pass
 
     sleep(5)
@@ -48,7 +48,7 @@ def scrape_restaurants_rating():
         rating=browser.find_elements_by_class_name("BTtC6e")[i].get_attribute('innerText')
         return(rating)
     #print(rating)
-    except NoSuchElementException:
+    except IndexError:
         rating='Not Provided'
         return(rating)
 
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     review_file=open('Record/'+str(timestamp)+'Review.csv','w')
     review_csv_writer=csv.writer(review_file)
     print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
-    for j in range(13):
+    for j in range(12):
         for i in range(19):
             clicking_buttons_to_load_required_data()
             name=scrape_restaurants_name()
@@ -145,11 +145,14 @@ if __name__ == "__main__":
             google_review=scrape_restaurants_google_review()
             scrape_csv_writer.writerow([name,rating,address,contact,cuisine,time,google_review])
             scrape_comments_review(name)
-        if j==13:
+        if j==12:
             break
         #print('loop break as page ends here')
+        try:
+            browser.find_element_by_id("pnnext").click(); #button for changing to next page
+        except NoSuchElementException:
+            pass
 
-        browser.find_element_by_id("pnnext").click(); #button for changing to next page
         sleep(5)
 
 
