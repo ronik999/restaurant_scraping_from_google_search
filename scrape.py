@@ -124,12 +124,12 @@ if __name__ == "__main__":
     browser.get('https://www.google.com/search?hl=en&tbm=lcl&ei=qkFRXOXnNdf69QOJ07CoAg&q=restaurants+in+nepal&oq=restaurants+in+nepal&gs_l=psy-ab.12...0.0.0.4479.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.uDrCYZozVUA#rlfi=hd:;si:;mv:!1m2!1d27.724099199999998!2d85.3324016!2m2!1d27.7054214!2d85.3073836;tbs:lrf:!2m1!1e2!2m1!1e3!2m4!1e17!4m2!17m1!1e2!3sIAE,lf:1,lf_ui:9')
 
 
-    ts=time.time()
-    scrape_file=open('Record/'+str(ts)+'Scrape.csv','w')
+    timestamp=time.time()
+    scrape_file=open('Record/'+str(timestamp)+'Scrape.csv','w')
     scrape_csv_writer=csv.writer(scrape_file)
     scrape_csv_writer.writerow(['Restaurant Name','Restaurant Rating','Restaurant Address','Contact No.','Cuisine','Opening Hours','Google Reviews'])
 
-    review_file=open('Record/'+str(ts)+'Review.csv','w')
+    review_file=open('Record/'+str(timestamp)+'Review.csv','w')
     review_csv_writer=csv.writer(review_file)
     print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
     for j in range(13):
