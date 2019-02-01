@@ -133,8 +133,8 @@ def scrape_comments_review(name):
 if __name__ == "__main__":
     for j in range(13):
         for i in range(19):
-            print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
             clicking_buttons_to_load_required_data()
+            print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
             name=scrape_restaurants_name()
             print(name)
             rating=scrape_restaurants_rating()
