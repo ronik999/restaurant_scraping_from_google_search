@@ -37,9 +37,6 @@ review_file=open('Record/'+str(ts)+'Review.csv','w')
 review_csv_writer=csv.writer(review_file)
 
 
-def browser_initialization():
-    print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
-
 
 def clicking_buttons_to_load_required_data():
     try:
@@ -136,6 +133,7 @@ def scrape_comments_review(name):
 if __name__ == "__main__":
     for j in range(13):
         for i in range(19):
+            print('THE NAME OF SCRAPED RESTAURANTS WITH ITS DATA ARE AS FOLLOWS:')
             clicking_buttons_to_load_required_data()
             name=scrape_restaurants_name()
             print(name)
