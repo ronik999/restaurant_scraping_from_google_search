@@ -145,7 +145,7 @@ if __name__ == "__main__":
             google_review=scrape_restaurants_google_review()
             scrape_csv_writer.writerow([name,rating,address,contact,cuisine,time,google_review])
             scrape_comments_review(name)
-        if j==None:
+        if j==13:
             break
         #print('loop break as page ends here')
 
