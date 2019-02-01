@@ -151,7 +151,7 @@ if __name__ == "__main__":
             break
         #print('loop break as page ends here')
 
-        browser.find_element_by_id("pnnext").click();
+        browser.find_element_by_id("pnnext").click(); #button for changing to next page
         sleep(5)
 
 
