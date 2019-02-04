@@ -6,7 +6,6 @@ import argparse
 import time
 from selenium.common.exceptions import NoSuchElementException
 
-#creating folder if it doesn't exist
 path= r'./Record'
 if not os.path.exists(path):
     os.makedirs(path)
@@ -47,7 +46,7 @@ def scrape_restaurants_rating():
     try:
         rating=browser.find_elements_by_class_name("BTtC6e")[i].get_attribute('innerText')
         return(rating)
-    #print(rating)
+
     except IndexError:
         rating='Not Provided'
         return(rating)
@@ -57,7 +56,7 @@ def scrape_restaurants_address():
     try:
         address=browser.find_element_by_class_name("LrzXr").get_attribute('innerText')
         return(address)
-    #print(address)
+
     except NoSuchElementException:
         address="Not Provided"
         return(address)
@@ -66,7 +65,7 @@ def scrape_restaurants_contact():
     try:
         contact=browser.find_element_by_css_selector('.zdqRlf').get_attribute('innerText')
         return(contact)
-        #print(contact)
+
     except NoSuchElementException:
         contact="Not Provided"
         return(contact)
@@ -75,7 +74,7 @@ def scrape_restaurants_cuisine():
     try:
         cuisine=browser.find_element_by_css_selector('span.YhemCb:nth-child(2)').get_attribute('innerText')
         return(cuisine)
-            #print(cuisine)
+
     except NoSuchElementException:
         cuisine='Not Provided'
         return(cuisine)
@@ -85,7 +84,7 @@ def scrape_restaurants_opening_hours():
         sleep(2)
         time=browser.find_element_by_class_name('WgFkxc').get_attribute('innerText')
         return(time)
-       # print(time)
+
     except NoSuchElementException:
         time='Not Provided'
         return(time)
@@ -94,7 +93,7 @@ def scrape_restaurants_google_review():
     try:
         google_review=browser.find_element_by_css_selector("span.fl:nth-child(3)").get_attribute('innerText')
         return(google_review)
-           # print(google_review)
+
     except NoSuchElementException:
         google_review='Not Provided'
         return(google_review)
@@ -109,10 +108,7 @@ def scrape_comments_review(name):
             continue
         review_csv_writer.writerow([review])
 
-
-
-
-#################################################      MAIN    #####################################
+#################################################      MAIN    #############################################################
 
 if __name__ == "__main__":
 
@@ -147,7 +143,7 @@ if __name__ == "__main__":
             scrape_comments_review(name)
         if j==12:
             break
-        #print('loop break as page ends here')
+
         try:
             browser.find_element_by_id("pnnext").click(); #button for changing to next page
         except NoSuchElementException:
