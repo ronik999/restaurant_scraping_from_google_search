@@ -1,18 +1,15 @@
 from selenium import webdriver
+import time
 from time import sleep
 import os
 import csv
 import argparse
-import time
 from selenium.common.exceptions import NoSuchElementException
 
-path= r'./Record'
-if not os.path.exists(path):
-    os.makedirs(path)
 
 def headless_mode_argument():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--headless', help='for headless argument',action="store_true")
+    parser.add_argument('--headless', help='for enabling headless mode',action="store_true")
     args = parser.parse_args()
     if args.headless:
         print("HEADLESS MODE ENABLED.")
@@ -112,6 +109,9 @@ def scrape_comments_review(name):
 
 if __name__ == "__main__":
 
+    path= r'./Record'
+    if not os.path.exists(path):
+        os.makedirs(path)
     option=webdriver.ChromeOptions()
     headless_mode_argument() #enable headless mode
     browser = webdriver.Chrome(executable_path='chromedriver',options=option)
